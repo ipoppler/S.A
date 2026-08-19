@@ -1,40 +1,28 @@
-const barraPesquisa = document.getElementById("barraPesquisa");
-const produtos = document.querySelectorAll("#listaProdutos li");
-const listaProdutos = document.getElementById("listaProdutos");
-const mensagem = document.getElementById("mensagem");
+const swiper = new Swiper(".mySwiper", {
+    direction: "horizontal",
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
 
-barraPesquisa.addEventListener("input", function () {
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+    },
 
-    const pesquisa = barraPesquisa.value.toLowerCase().trim();
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
 
-    // Se não digitou nada, esconde a lista
-    if (pesquisa === "") {
-        listaProdutos.style.display = "none";
-        mensagem.textContent = "";
-        return;
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
     }
 
-    let encontrou = false;
-
-    produtos.forEach(function (produto) {
-
-        const nomeProduto = produto.textContent.toLowerCase();
-
-        if (nomeProduto.includes(pesquisa)) {
-            produto.style.display = "block";
-            encontrou = true;
-        } else {
-            produto.style.display = "none";
-        }
-
-    });
-
-    // Mostra a lista somente quando existe pesquisa
-    listaProdutos.style.display = "block";
-
-    if (!encontrou) {
-        mensagem.textContent = "Nenhum produto encontrado.";
-    } else {
-        mensagem.textContent = "";
     }
-});
+);
+
+
+function carrinho (){
+    const card = document.getElementById(carrinho)
+}
