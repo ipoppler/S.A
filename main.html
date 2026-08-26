@@ -6,10 +6,18 @@
     <title>Techstore Junior</title>
 
     <link rel="stylesheet" href="main.css">
+
 </head>
 <body>
     <div class="container">
         <h1>Pesquisar produtos</h1>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pesquisar produtos</h1> <!-- matheus, faz a barra de pesquisa funcional pf -->
+
 
         <input
             type="text"
@@ -18,10 +26,17 @@
         >
 
         <ul id="listaProdutos">
+
             <li onclick="irProduto('computador')">Capa para Laptop</li>
             <li onclick="irProduto('fone')">Fone de Ouvido Personalizado</li>
             <li onclick="irProduto('capinha')">Capinhas de Celular</li>
             <li onclick="irProduto('iphone')">IPhone 17</li>
+
+            <li>Capa para Laptop</li>
+            <li>Fone de Ouvido Personalizado</li>
+            <li>Capinhas de Celular</li>
+            <li>Celular</li>
+
         </ul>
 
         <p id="mensagem"></p>
@@ -51,13 +66,56 @@
         </div>
     </div>
 
+        <div class="carrinho">
+            <a href="sitecarrinho">
+                <img src="/img/CarrinhoPNG.png" alt="Carrinho de Compras">
+            </a>
+            <li>
+                <ul></ul>
+            </li>
+        </div>
+
+
         <a href="sitedoperfil">
             <img src="/img/usuário.jpg" alt="Usuário">
         </a>
+
+
+
+       <div class="swiper mySwiper">
+
+    <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+            <img src="img/Banner Logo Principal.png" alt="Logo Principal">
+        </div>
+
+        <div class="swiper-slide">
+            <img src="img/Banner Capinhas.png" alt="Capinhas">
+        </div>
+
+        <div class="swiper-slide">
+            <img src="img/Banner Celular.png" alt="Celular">
+        </div>
+
+        <div class="swiper-slide">
+            <img src="img/Banner Aproveite a Promo.png" alt="Promoção">
+        </div>
+
+    </div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <div class="swiper-pagination"></div>
+
+</div>
+
         <h1>Techstore Junior</h1>
         <h4>Be a Virtual Diva</h4>
         <nav>
             <button>
+
             <a href=main.html>
                 Página Inicial
             </a>
@@ -167,6 +225,49 @@
 
     <button type="submit">Entrar</button>
 </form>
+
+            <h2>Página Inicial <a href="linklinklink"></a></h2>
+            </button>
+            <button>
+                <h2>Produtos <a href=#products></a></h2>
+            </button>
+        </nav>
+    </header>
+    <div class="products">
+        <h2>Conheça nosso catálogo ⊹ ࣪ ˖</h2>
+        
+        <div class="product">
+                <div class="produto1">
+                    <img src="/img/phone case.png" alt="Capinha Celular">
+                    <p>Uma capinha de celular personalizada para você! Compatível com diversas marcas.</p>
+                    <button type="button" onclick="">
+                        <img src="" alt="+">
+                    </button>
+                </div>
+                <div class="produto2">
+                    <img src="/img/i17.png" alt="Iphone 17">
+                    <p>O celular de última geração que pensa no seu conforto e no seu trabalho.</p>
+                    <button type="button" onclick="">
+                        <img src="" alt="+">
+                    </button>
+                </div>
+                <div class="produto3">
+                    <img src="/img/person.headphones.png" alt="Fone de Ouvido">
+                    <p>Bluetooth de boa qualidade, redução de ruído e personalidade!</p>
+                    <button type="button" onclick="">
+                        <img src="" alt="+">
+                    </button>
+                </div>
+                <div class="produto4">
+                    <img src="/img/laptopcase.png" alt="Capinha Computador">
+                    <p>Proteja o que é seu de um jeito estiloso. Compatível com diversas marcas!</p>
+                    <button type="button" onclick="">
+                        <img src="" alt="+">
+                    </button>
+                </div>
+        </div>
+        
+    </div>
 
     <script src="main.js"></script>
 

@@ -37,14 +37,15 @@ header {
     box-shadow: 0 4px 20px rgba(130, 54, 82, 0.2);
 }
 
-.logo {
+.logo{
     font-size: 3.8rem;
     font-weight: bold;
     color: white;
     letter-spacing: 1px;
+
 }
 
-.carrinho img {
+.carrinho img{
     width: 6rem;
     border-radius: 50%;
     transition: 0.3s;
@@ -58,7 +59,59 @@ header > a img {
     transition: 0.3s;
 }
 
-h1 {
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 5rem 0 3rem;
+}
+
+.title h3{
+    font-size: 3.5rem;
+    color: #823652;
+    text-shadow: 0 3px 10px rgba(173, 40, 49, 0.15);
+}
+
+.title img{
+    width: 6rem;
+    border-radius: 50%;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #442b1c;
+}
+
+.swiper-pagination-bullet {
+    background: #442b1c;
+}
+ h1 {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -68,7 +121,10 @@ h4 {
 }
 
 
+
 /* barra de pesquisa */
+
+
 
 .container {
     max-width: 500px;
@@ -78,6 +134,13 @@ h4 {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 
 #barraPesquisa {
     width: 100%;
@@ -96,6 +159,10 @@ h4 {
 #listaProdutos {
     list-style: none;
     display: none;
+
+    /* Esconde a lista inicialmente */
+    display: none;
+
     margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 6px;
@@ -225,4 +292,8 @@ h4 {
 
 #itensCarrinho {
     margin-bottom: 20px;
+=======
+#listaProdutos {
+    display: none;
+>>>>>>> 7367b785b42136dccedc017bede9cecda0b35d1f
 }
