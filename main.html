@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techstore Junior</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pesquisar produtos</h1>
+
+        <input
+            type="text"
+            id="barraPesquisa"
+            placeholder="Digite para pesquisar..."
+        >
+
+        <ul id="listaProdutos">
+            <li onclick="irProduto('computador')">Capa para Laptop</li>
+            <li onclick="irProduto('fone')">Fone de Ouvido Personalizado</li>
+            <li onclick="irProduto('capinha')">Capinhas de Celular</li>
+            <li onclick="irProduto('iphone')">IPhone 17</li>
+        </ul>
+
+        <p id="mensagem"></p>
+    </div>
+    <header>
+
+        <img src="/img/logo Tech Junior.png" alt="Logo do Site">
+
+    <div class="carrinho">
+
+        <img
+            src="/img/CarrinhoPNG.png"
+            alt="Carrinho de Compras"
+            id="iconeCarrinho"
+        >
+
+        <div id="carrinhoConteudo">
+            <h1>Carrinho</h1>
+            <div id="itensCarrinho">
+                <p>Seu carrinho está vazio.</p>
+            </div>
+            <div id="total">
+                <p>Total: R$ 0,00</p>
+            </div>
+
+            <button onclick="comprar()">Comprar</button>
+        </div>
+    </div>
+
+        <a href="sitedoperfil">
+            <img src="/img/usuário.jpg" alt="Usuário">
+        </a>
+        <h1>Techstore Junior</h1>
+        <h4>Be a Virtual Diva</h4>
+        <nav>
+            <button>
+            <a href=main.html>
+                Página Inicial
+            </a>
+            </button>
+            <button>
+                <a href=#products>
+                    Produtos
+                </a>
+            </button>
+            <button>
+                <a href="#pedidos">
+                    Pedidos
+                </a>
+            </button>
+        </nav>
+    </header>
+    <div class="carrossel">
+
+        <div class="banners">
+
+            <div class="slide">
+                <img src="img/Banner Logo Principal.png" alt="Logo Principal">
+            </div>
+
+            <div class="slide">
+                <img src="img/Banner Capinhas.png" alt="Capinhas">
+            </div>
+
+            <div class="slide">
+                <img src="img/Banner Celular.png" alt="Celular">
+            </div>
+
+            <div class="slide">
+                <img src="img/Banner Aproveite a Promo.png" alt="Promoção">
+            </div>
+
+        </div>
+
+        <div class="prox"></div>
+        <div class="ant"></div>
+
+        <div class="swiper-pagination"></div>
+
+        </div>
+    <div id="products">
+            <h2>Conheça nosso catálogo ⊹ ࣪ ˖</h2>
+            
+            <div class="product-list">
+
+        <div class="produto" id="capinha">
+            <img src="/img/phone case.png" alt="Capinha Celular">
+            <h3>Capinha de Celular</h3>
+            <p>Uma capinha de celular personalizada para você! Compatível com diversas marcas.</p>
+            <span>R$ 39,90</span>
+            <button type="button" onclick="addCarrinho('Capinha de Celular')">
+                +
+            </button>
+        </div>
+
+        <div class="produto" id="iphone">
+            <img src="/img/i17.png" alt="IPhone 17">
+            <h3>IPhone 17</h3>
+            <p>O celular de última geração que pensa no seu conforto e no seu trabalho.</p>
+            <span>R$ 5.999,90</span>
+            <button type="button" onclick="addCarrinho('IPhone 17')">
+                +
+            </button>
+        </div>
+
+        <div class="produto" id="fone">
+            <img src="/img/person.headphones.png" alt="Fone de Ouvido">
+            <h3>Fone de Ouvido</h3>
+            <p>Bluetooth de boa qualidade, redução de ruído e personalidade!</p>
+            <span>R$ 149,90</span>
+            <button type="button" onclick="addCarrinho('Fone de Ouvido')">
+                +
+            </button>
+        </div>
+
+        <div class="produto" id="computador">
+            <img src="/img/laptopcase.png" alt="Capinha para Computador">
+            <h3>Capinha para Computador</h3>
+            <p>Proteja o que é seu de um jeito estiloso. Compatível com diversas marcas!</p>
+            <span>R$ 89,90</span>
+            <button type="button" onclick="addCarrinho('Capinha para Computador')">
+                +
+            </button>
+        </div>
+
+    </div>
+
+    <div id="pedidos">
+        <h2>Meus pedidos</h2>
+
+        <div id="listaPedidos">
+            <p>Você ainda não fez nenhum pedido.</p>
+        </div>
+    </div>
+
+    <form onsubmit="entrar()">
+    <h2>Entrar</h2>
+    <p>Nome:</p>
+    <input type="text" id="nome">
+
+    <p>E-mail:</p>
+    <input type="email" id="email">
+
+    <button type="submit">Entrar</button>
+</form>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
