@@ -45,6 +45,8 @@ let carrinho = [];
 let pedidos = [];
 let totalCompra = 0;
 let totaisPedidos = [];
+let nome = "";
+let email = "";
 
 function addCarrinho(produto){
     carrinho.push(produto);
@@ -158,7 +160,13 @@ function comprar() {
 
     console.log("A função comprar foi chamada!");
     
+    nome = document.querySelector("#nome").value
+    email = document.querySelector("#email").value
 
+    if (nome === "" || email === "") {
+        alert("Login inexistente. Não foi possível realizar a compra.")
+        return;
+    }
     if (carrinho.length === 0) {
         alert("Seu carrinho está vazio!");
     } else {
@@ -191,33 +199,4 @@ function mostrarPedidos() {
 
     }
 
-}
-
-const swiper = new Swiper(".mySwiper", {
-    direction: "horizontal",
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 0,
-
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false
-    },
-
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-    },
-
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-    }
-
-    }
-);
-
-
-function carrinho (){
-    const card = document.getElementById(carrinho)
 }

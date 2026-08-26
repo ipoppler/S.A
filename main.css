@@ -1,112 +1,3 @@
-@font-face {
-    font-family: "amo";
-    src: url("amoria.otf") format("opentype");
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "amo", sans-serif;
-    background: linear-gradient(to bottom, #bab1a9, #823652);
-    color: #442b1c;
-}
-
-header {
-    width: 100%;
-    min-height: 10rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 6%;
-
-    background: rgba(68, 43, 28, 0.95);
-
-    backdrop-filter: blur(10px);
-
-    box-shadow: 0 4px 20px rgba(130, 54, 82, 0.2);
-}
-
-.logo{
-    font-size: 3.8rem;
-    font-weight: bold;
-    color: white;
-    letter-spacing: 1px;
-
-}
-
-.carrinho img{
-    width: 6rem;
-    border-radius: 50%;
-    transition: 0.3s;
-}
-
-header > a img {
-    width: 5rem;
-    height: 5rem;
-    object-fit: contain;
-    border-radius: 50%;
-    transition: 0.3s;
-}
-
-
-.title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    margin: 5rem 0 3rem;
-}
-
-.title h3{
-    font-size: 3.5rem;
-    color: #823652;
-    text-shadow: 0 3px 10px rgba(173, 40, 49, 0.15);
-}
-
-.title img{
-    width: 6rem;
-    border-radius: 50%;
-}
-
-
-.swiper {
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-}
-
-.swiper-wrapper {
-    display: flex;
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: 350px;
-    object-fit: contain;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    color: #442b1c;
-}
 
 .swiper-pagination-bullet {
     background: #442b1c;
@@ -159,10 +50,6 @@ h1 {
 #listaProdutos {
     list-style: none;
     display: none;
-
-    /* Esconde a lista inicialmente */
-    display: none;
-
     margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 6px;
@@ -292,8 +179,4 @@ h1 {
 
 #itensCarrinho {
     margin-bottom: 20px;
-=======
-#listaProdutos {
-    display: none;
->>>>>>> 7367b785b42136dccedc017bede9cecda0b35d1f
 }
