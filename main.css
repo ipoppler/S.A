@@ -1,64 +1,139 @@
-
-.swiper-pagination-bullet {
-    background: #442b1c;
-}
- h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h4 {
-    text-align: center;
+body {
+    margin: 0;
+    background-image: linear-gradient(to bottom, #ba94a2, #cc5887);
 }
 
 
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-/* barra de pesquisa */
+    width: 100%;
+    height: 500px;
 
+    z-index: 20;
 
+    display: grid;
+
+    grid-template-columns: 180px 1fr 350px;
+    grid-template-rows: 1fr 1fr;
+
+    grid-template-areas:
+        "logo pesquisa carrinho"
+        "logo pesquisa nav";
+
+    padding: 20px 50px;
+    box-sizing: border-box;
+}
+
+#logo {
+    grid-area: logo;
+
+    width: 80px;
+    height: 80px;
+
+    margin: 0;
+    border-radius: 50%;
+
+    justify-self: start;
+}
+
+nav {
+    
+    display: flex;
+    margin-top: 220px;
+
+    justify-content: center;
+    gap: 8px;
+
+    align-self: start;
+
+}
+nav button {
+    background-color: #cc5887;
+
+    color: #823652;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 10px 20px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+nav a{
+    text-decoration: none;
+
+    color: #823652;
+}
 
 .container {
-    max-width: 500px;
-    margin: 20px auto;
+
+    width: 400px;
+
+    margin: 0 auto;
+    margin-top: 30px;
+
     background-color: white;
-    padding: 30px;
+
+    padding: 25px;
+
     border-radius: 10px;
+
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    align-self: start;
 }
 
-
-h1 {
+.container h1 {
     text-align: center;
+
+    margin-top: 0;
     margin-bottom: 20px;
 }
 
 
 #barraPesquisa {
     width: 100%;
-    padding: 12px;
+    box-sizing: border-box;
+
+    padding: 7px;
+
     font-size: 16px;
+
     border: 1px solid #ccc;
     border-radius: 6px;
-    margin-bottom: 10px;
+
 }
 
 #barraPesquisa:focus {
     outline: none;
+
     border-color: #823652;
 }
 
 #listaProdutos {
     list-style: none;
+
     display: none;
+
     margin-top: 5px;
+
     border: 1px solid #ddd;
     border-radius: 6px;
+
     overflow: hidden;
 }
 
 #listaProdutos li {
-    padding: 12px;
+    padding: 7px;
+
     border-bottom: 1px solid #ddd;
+
     cursor: pointer;
 }
 
@@ -72,17 +147,18 @@ h1 {
 
 #mensagem {
     text-align: center;
+
     color: #777;
+
     margin-top: 15px;
 }
 
-
-/* carrossel */
-
 .carrossel {
     position: relative;
+
     width: 100%;
-    height: 400px;
+    height: 500px;
+
     overflow: hidden;
 }
 
@@ -93,6 +169,7 @@ h1 {
 
 .slide {
     display: none;
+
     width: 100%;
     height: 100%;
 }
@@ -100,15 +177,14 @@ h1 {
 .slide img {
     width: 100%;
     height: 100%;
+
     object-fit: contain;
 }
-
-
-/* proximo e anterior */
 
 .prox,
 .ant {
     position: absolute;
+
     top: 50%;
     transform: translateY(-50%);
 
@@ -116,12 +192,15 @@ h1 {
     height: 45px;
 
     border-radius: 50%;
+
     background-color: rgba(68, 43, 28, 0.8);
 
     cursor: pointer;
-    z-index: 10;
+
+    z-index: 30;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
@@ -136,22 +215,36 @@ h1 {
 
 .prox::after {
     content: "❯";
+
     color: white;
+
     font-size: 25px;
 }
 
 .ant::after {
     content: "❮";
+
     color: white;
+
     font-size: 25px;
 }
 
 .carrinho {
-    position: relative;
+    grid-area: carrinho;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-self: end;
+    
 }
 
 #iconeCarrinho {
     width: 6rem;
+
     cursor: pointer;
 }
 
@@ -159,13 +252,18 @@ h1 {
     display: none;
 
     position: absolute;
+
     right: 0;
     top: 7rem;
 
     width: 300px;
-    padding: 20px;
 
-    background-color: white;
+    padding: 15px;
+
+    background-color: rgb(226, 140, 170);
+
+    border:#823652 1px solid;
+
     border-radius: 10px;
 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -174,7 +272,7 @@ h1 {
 }
 
 #carrinhoConteudo h1 {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 #itensCarrinho {
