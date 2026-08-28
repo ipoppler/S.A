@@ -1,4 +1,4 @@
-###'TechStore Júnior'
+### 'TechStore Júnior'
 
 ## Sobre o projeto
 
