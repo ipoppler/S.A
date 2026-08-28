@@ -1,8 +1,8 @@
-### 'TechStore Júnior'
+***TechJunior***
 
 ## Sobre o projeto
 
-A TechStore Júnior é uma loja virtual de acessórios para celular, informática e eletrônicos simples, desenvolvida como projeto final a matéria de Lógica de Programação.
+A TechJunior é uma loja virtual de acessórios para celular, informática e eletrônicos simples, desenvolvida como projeto final a matéria de Lógica de Programação.
 
 O projeto consiste em um protótipo funcional de uma loja virtual, desenvolvido com HTML, CSS e JavaScript. O site permite visualizar os produtos e simular uma compra através do carrinho, sem realizar pagamentos reais ou utilizar banco de dados.
 
