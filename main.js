@@ -47,11 +47,23 @@ let totalCompra = 0;
 let totaisPedidos = [];
 let nome = "";
 let email = "";
+let quantidades = {}
 
-function addCarrinho(produto){
+function addCarrinho(produto, botao){
     carrinho.push(produto);
     mostrarCarrinho();
-    console.log(carrinho);
+
+    quantidades[produto] = (quantidades[produto] || 0) + 1;
+
+    let contador = botao.nextElementSibling;
+
+    if (!contador || !contador.classList.contains("contador")) {
+        contador = document.createElement("span");
+        contador.classList.add("contador");
+        botao.insertAdjacentElement("afterend", contador);
+    }
+
+    contador.textContent = quantidades[produto];
 }
 
 const iconeCarrinho = document.querySelector("#iconeCarrinho");
@@ -63,29 +75,56 @@ const mensagem = document.querySelector("#mensagem");
 
 barraPesquisa.addEventListener("input", function() {
 
-    let pesquisa = barraPesquisa.value;
+    let pesquisa = barraPesquisa.value.trim().toLowerCase();
     let produtos = document.querySelectorAll("#listaProdutos li");
+    let algumVisivel = false;
+
+    if (pesquisa === "") {
+        listaProdutos.style.display = "none";
+        mensagem.textContent = "";
+        return;
+    }
 
     listaProdutos.style.display = "block";
 
-    for (let i = 0; i < produtos.length; i++) {
+    produtos.forEach(function(produto) {
+        let texto = produto.textContent.toLowerCase();
 
-        if (produtos[i].textContent == pesquisa) {
-            produtos[i].style.display = "block";
+        if (texto.includes(pesquisa)) {
+            produto.style.display = "block";
+            algumVisivel = true;
+        } else {
+            produto.style.display = "none";
         }
+    });
 
-        else {
-            produtos[i].style.display = "none";
-        }
+    mensagem.textContent = algumVisivel ? "" : "Nenhum produto encontrado.";
+});
 
+document.addEventListener("click", function(e) {
+    if (!e.target.closest(".search-wrapper") && !e.target.closest("#listaProdutos")) {
+        listaProdutos.style.display = "none";
     }
-
 });
 
 function irProduto(id) {
 
-    document.querySelector("#" + id).scrollIntoView();
+    const produto = document.querySelector("#" + id);
 
+    if (!produto) {
+        return;
+    }
+
+    produto.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    produto.classList.add("produto-destaque");
+    setTimeout(function() {
+        produto.classList.remove("produto-destaque");
+    }, 1400);
+
+    listaProdutos.style.display = "none";
+    barraPesquisa.value = "";
+    mensagem.textContent = "";
 }
 
 iconeCarrinho.addEventListener("click", function() {
@@ -188,15 +227,129 @@ function mostrarPedidos() {
 
     for (let i = 0; i < pedidos.length; i++) {
 
-        listaPedidos.innerHTML += 
-            "<p>Pedido " + (i + 1) + "</p>";
+        let produtosHTML = "";
 
-        listaPedidos.innerHTML += 
-            pedidos[i] + "<br>";
+        for (let j = 0; j < pedidos[i].length; j++) {
 
-        listaPedidos.innerHTML += 
-            "Total: R$ " + totaisPedidos[i].toFixed(2) + "<br>";
+            let produto = pedidos[i][j];
 
+            let imagem = "";
+
+            let preco = 0;
+
+            if (produto === "Capinha de Celular") {
+                imagem = "/img/phone case.png";
+                preco = 39.90;
+            }
+
+            else if (produto === "IPhone 17") {
+                imagem = "/img/i17.png";
+                preco = 5999.90;
+            }
+
+            else if (produto === "Fone de Ouvido") {
+                imagem = "/img/person.headphones.png";
+                preco = 149.90;
+            }
+
+            else if (produto === "Capinha para Computador") {
+                imagem = "/img/laptopcase.png";
+                preco = 89.90;
+            }
+
+            produtosHTML += `
+                <div class="item-pedido">
+
+                    <img src="${imagem}" alt="${produto}">
+
+                    <div>
+                        <h4>${produto}</h4>
+                        <p>Quantidade: 1</p>
+                        <strong>R$ ${preco.toFixed(2)}</strong>
+                    </div>
+
+                </div>
+            `;
+        }
+
+
+        listaPedidos.innerHTML += `
+
+            <div class="pedido">
+
+                <div class="pedido-topo">
+
+                    <div>
+                        <h3>Pedido #${String(i + 1).padStart(3, "0")}</h3>
+
+                        <p>
+                            Pedido realizado com sucesso
+                        </p>
+                    </div>
+
+                    <span class="status">
+                        Pedido confirmado
+                    </span>
+
+                </div>
+
+
+                <div class="pedido-produtos">
+
+                    ${produtosHTML}
+
+                </div>
+
+
+                <div class="progresso-pedido">
+
+                    <div class="etapa ativa">
+                        <span>✓</span>
+                        <p>Confirmado</p>
+                    </div>
+
+                    <div class="linha"></div>
+
+                    <div class="etapa">
+                        <span>2</span>
+                        <p>Preparando</p>
+                    </div>
+
+                    <div class="linha"></div>
+
+                    <div class="etapa">
+                        <span>3</span>
+                        <p>Enviado</p>
+                    </div>
+
+                    <div class="linha"></div>
+
+                    <div class="etapa">
+                        <span>4</span>
+                        <p>Entregue</p>
+                    </div>
+
+                </div>
+
+
+                <div class="pedido-final">
+
+                    <div>
+                        <p>Total do pedido</p>
+
+                        <strong>
+                            R$ ${totaisPedidos[i].toFixed(2)}
+                        </strong>
+                    </div>
+
+                    <button type="button">
+                        Ver detalhes
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
     }
-
 }

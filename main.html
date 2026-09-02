@@ -7,31 +7,37 @@
 
     <link rel="stylesheet" href="main.css">
 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
     <header>
-        <img id="logo" src="/img/logo Tech Junior.png" alt="Logo do Site">
-
         <div class="container">
-            <h1>Pesquisar produtos</h1>
+    <h1>Pesquisar produtos</h1>
 
-            <input
-                type="text"
-                id="barraPesquisa"
-                placeholder="Digite para pesquisar..."
-            >
+    <div class="search-wrapper">
+        <input
+            type="text"
+            id="barraPesquisa"
+            placeholder="Digite para pesquisar..."
+            autocomplete="off"
+        >
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="7" stroke-width="2"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </div>
 
-            <ul id="listaProdutos">
+    <ul id="listaProdutos">
+        <li onclick="irProduto('computador')">Capa para Laptop</li>
+        <li onclick="irProduto('fone')">Fone de Ouvido Personalizado</li>
+        <li onclick="irProduto('capinha')">Capinhas de Celular</li>
+        <li onclick="irProduto('iphone')">IPhone 17</li>
+    </ul>
 
-                <li onclick="irProduto('computador')">Capa para Laptop</li>
-                <li onclick="irProduto('fone')">Fone de Ouvido Personalizado</li>
-                <li onclick="irProduto('capinha')">Capinhas de Celular</li>
-                <li onclick="irProduto('iphone')">IPhone 17</li>
-
-            </ul>
-
-            <p id="mensagem"></p>
-        </div>
+    <p id="mensagem"></p>
+</div>
+        <img id="logo" src="/img/logo Tech Junior.png" alt="Logo do Site">
 
     <div class="carrinho">
 
@@ -67,54 +73,38 @@
 
     </div>
 
-        <nav>
-            <button>
-
-            <a href=main.html>
-                Página Inicial
-            </a>
-            </button>
-            <button>
-                <a href=#products>
-                    Produtos
-                </a>
-            </button>
-            <button>
-                <a href="#pedidos">
-                    Pedidos
-                </a>
-            </button>
-        </nav>
+        
     </header>
 
-    <div class="carrossel">
+  <div class="carrossel">
 
-        <div class="banners">
-
-            <div class="slide">
-                <img src="/img/Banner Logo Principal.png" alt="Logo Principal">
-            </div>
-
-            <div class="slide">
-                <img src="/img/Banner Capinhas.png" alt="Capinhas">
-            </div>
-
-            <div class="slide">
-                <img src="/img/Banner Celular.png" alt="Celular">
-            </div>
-
-            <div class="slide">
-                <img src="/img/Banner Aproveite a Promo.png" alt="Promoção">
-            </div>
-
+    <div class="banners">
+        <div class="slide active">
+            <img src="/img/Banner Logo Principal.png" alt="Logo Principal">
         </div>
-
-        <div class="prox"></div>
-        <div class="ant"></div>
-
-        <div class="swiper-pagination"></div>
-
+        <div class="slide">
+            <img src="/img/Banner Capinhas.png" alt="Capinhas">
         </div>
+        <div class="slide">
+            <img src="/img/Banner Celular.png" alt="Celular">
+        </div>
+        <div class="slide">
+            <img src="/img/Banner Aproveite a Promo.png" alt="Promoção">
+        </div>
+    </div>
+
+    <div class="prox"></div>
+    <div class="ant"></div>
+
+    <nav>
+        <button><a href="main.html">Página Inicial</a></button>
+        <button><a href="#products">Produtos</a></button>
+        <button><a href="#pedidos">Pedidos</a></button>
+    </nav>
+
+    <div class="swiper-pagination"></div>
+
+</div>
 
     <div id="products">
             <h2>Conheça nosso catálogo ⊹ ࣪ ˖</h2>
@@ -126,9 +116,11 @@
             <h3>Capinha de Celular</h3>
             <p>Uma capinha de celular personalizada para você! Compatível com diversas marcas.</p>
             <span>R$ 39,90</span>
-            <button type="button" onclick="addCarrinho('Capinha de Celular')">
+            <div class="botao-wrapper">
+            <button type="button" onclick="addCarrinho('Capinha de Celular', this)">
                 +
             </button>
+            </div>
         </div>
 
         <div class="produto" id="iphone">
@@ -136,9 +128,11 @@
             <h3>IPhone 17</h3>
             <p>O celular de última geração que pensa no seu conforto e no seu trabalho.</p>
             <span>R$ 5.999,90</span>
-            <button type="button" onclick="addCarrinho('IPhone 17')">
+            <div class="botao-wrapper">
+            <button type="button" onclick="addCarrinho('IPhone 17', this)">
                 +
             </button>
+            </div>
         </div>
 
         <div class="produto" id="fone">
@@ -146,9 +140,11 @@
             <h3>Fone de Ouvido</h3>
             <p>Bluetooth de boa qualidade, redução de ruído e personalidade!</p>
             <span>R$ 149,90</span>
-            <button type="button" onclick="addCarrinho('Fone de Ouvido')">
+            <div class="botao-wrapper">
+            <button type="button" onclick="addCarrinho('Fone de Ouvido', this)">
                 +
             </button>
+            </div>
         </div>
 
         <div class="produto" id="computador">
@@ -156,22 +152,54 @@
             <h3>Capinha para Computador</h3>
             <p>Proteja o que é seu de um jeito estiloso. Compatível com diversas marcas!</p>
             <span>R$ 89,90</span>
-            <button type="button" onclick="addCarrinho('Capinha para Computador')">
+            <div class="botao-wrapper">
+            <button type="button" onclick="addCarrinho('Capinha para Computador', this)">
                 +
             </button>
+            </div>
         </div>
 
     </div>
     </div>
 
-    <div id="pedidos">
-        <h2>Meus pedidos</h2>
+    <footer>
+        
+<div id="pedidos">
 
-        <div id="listaPedidos">
-            <p>Você ainda não fez nenhum pedido.</p>
+    <h2>Meus pedidos ♡</h2>
+
+    <p class="subtitulo-pedidos">
+        Acompanhe suas compras e veja o status dos seus pedidos.
+    </p>
+
+    <div id="listaPedidos">
+
+        <div class="sem-pedidos">
+            <span>♡</span>
+
+            <h3>Você ainda não tem pedidos!</h3>
+
+            <p>
+                Que tal dar uma olhadinha no nosso catálogo
+                e encontrar alguma coisa que combine com você?
+            </p>
+
+            <a href="#products">Ver produtos</a>
         </div>
+
     </div>
 
+</div>
+
+    
+     <div class="networks">
+        <i class='bx bxl-instagram-alt'></i>
+        <i class='bx bxl-tiktok'></i>
+        <i class='bx bxl-facebook'></i>
+        <i class='bx bxl-youtube'></i>
+    </div>
+
+    </footer>
     <script src="main.js"></script>
 
 </body>
